@@ -7,6 +7,3 @@ require "active_support"
 require "minitest/reporters"
 
 Minitest::Reporters.use! [Minitest::Reporters::DefaultReporter.new(:color => true)]
-
-class TestsPolicy
-end
