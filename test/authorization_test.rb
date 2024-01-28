@@ -21,11 +21,13 @@ class Guarda::AuthorizationTest < ActiveSupport::TestCase
   test "#authorize with optional attributes" do
     controller = Controller.new(action_name: "x", controller_path: "x")
 
-    assert controller.authorize(
-      controller: "tests",
-      query: "edit?",
-      record: Record.new
-    )
+    assert controller.authorize(Record.new, controller: "tests", query: "edit?")
+  end
+
+  test "#authorize with optional attributes as symbols" do
+    controller = Controller.new(action_name: "x", controller_path: "x")
+
+    assert controller.authorize(Record.new, controller: :tests, query: :edit?)
   end
 
   test "#authorize when policy is found but query is false" do
