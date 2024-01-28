@@ -19,7 +19,7 @@ module Guarda
         raise(NotAuthorizedError, self.class)
     end
 
-    def policy(controller, record)
+    def policy(controller, record = nil)
       PolicyFinder.find(controller).new(record)
     end
 
