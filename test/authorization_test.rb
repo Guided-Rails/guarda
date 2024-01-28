@@ -58,4 +58,11 @@ class Guarda::AuthorizationTest < ActiveSupport::TestCase
       controller.verify_authorization_performed
     end
   end
+
+  test "#policy" do
+    controller = Controller.new(action_name: "x", controller_path: "x")
+    policy = controller.policy("tests", Record.new)
+
+    assert_kind_of TestsPolicy, policy
+  end
 end
