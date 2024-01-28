@@ -69,4 +69,11 @@ class Guarda::AuthorizationTest < ActiveSupport::TestCase
 
     assert_kind_of TestsPolicy, policy
   end
+
+  test "#policy record is optional" do
+    controller = Controller.new(action_name: "x", controller_path: "x")
+    policy = controller.policy("tests")
+
+    assert_kind_of TestsPolicy, policy
+  end
 end
