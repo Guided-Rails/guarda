@@ -5,6 +5,12 @@ module Guarda
     class NotAuthorizedError < StandardError; end
     class AuthorizationNotPerformedError < StandardError; end
 
+    included do
+      if respond_to?(:helper_method)
+        helper_method :policy
+      end
+    end
+
     def authorize(controller: nil, query: nil, record: nil)
       @_authorization_performed = true
       controller ||= controller_path
