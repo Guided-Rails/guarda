@@ -41,4 +41,21 @@ class Guarda::AuthorizationTest < ActiveSupport::TestCase
       controller.authorize
     end
   end
+
+  test "#verify_authorization_performed when performed" do
+    controller = Controller.new(action_name: "index", controller_path: "tests")
+
+    assert_nothing_raised do
+      controller.authorize
+      controller.verify_authorization_performed
+    end
+  end
+
+  test "#verify_authorization_performed when not performed" do
+    controller = Controller.new(action_name: "index", controller_path: "tests")
+
+    assert_raises Guarda::Authorization::AuthorizationNotPerformedError do
+      controller.verify_authorization_performed
+    end
+  end
 end
