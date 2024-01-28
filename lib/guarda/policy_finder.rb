@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Guarda
   class PolicyFinder
     def initialize(controller_name)
