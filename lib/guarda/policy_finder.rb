@@ -1,7 +1,5 @@
 module Guarda
   class PolicyFinder
-    class NotFoundError < StandardError; end
-
     def initialize(controller_name)
       @controller_name = controller_name
     end
