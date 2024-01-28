@@ -23,7 +23,7 @@ module Guarda
     end
 
     def policy_class_name
-      controller_name.camelize.concat("Policy")
+      controller_name.to_s.camelize.concat("Policy")
     end
   end
 end

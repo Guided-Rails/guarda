@@ -10,7 +10,7 @@ module Guarda
       end
     end
 
-    def authorize(controller: nil, query: nil, record: nil)
+    def authorize(record = nil, controller: nil, query: nil)
       @_authorization_performed = true
       controller ||= controller_path
       query ||= "#{action_name}?"
