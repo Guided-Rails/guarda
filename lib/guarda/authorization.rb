@@ -2,9 +2,6 @@ module Guarda
   module Authorization
     extend ActiveSupport::Concern
 
-    class NotAuthorizedError < StandardError; end
-    class AuthorizationNotPerformedError < StandardError; end
-
     included do
       if respond_to?(:helper_method)
         helper_method :policy

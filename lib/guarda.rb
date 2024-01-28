@@ -7,4 +7,7 @@ require_relative "guarda/authorization"
 
 module Guarda
   class Error < StandardError; end
+  class Authorization::NotAuthorizedError < Error; end
+  class Authorization::AuthorizationNotPerformedError < Error; end
+  class PolicyFinder::NotFoundError < Error; end
 end
