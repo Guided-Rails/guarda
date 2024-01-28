@@ -25,11 +25,3 @@ class Guarda::PolicyFinderTest < ActiveSupport::TestCase
     end
   end
 end
-
-class TestsPolicy
-end
-
-module Admin
-  class TestsPolicy
-  end
-end
