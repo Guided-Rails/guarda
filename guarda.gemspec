@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email = ["abdul@hey.com"]
 
   spec.summary = "Another authorization gem"
-  spec.homepage = "https://wwww.guidedrails.com"
+  spec.homepage = "https://www.guidedrails.com"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.1.0"
 
