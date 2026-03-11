@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    guarda (0.3.0)
+    guarda (0.4.0)
 
 GEM
   remote: https://rubygems.org/
@@ -41,6 +41,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  arm64-darwin-23
 
 DEPENDENCIES
   activesupport (~> 7.1, >= 7.1.3)
