@@ -6,7 +6,7 @@ class Guarda::AuthorizationTest < ActiveSupport::TestCase
   test "#authorize when policy is found and query is true" do
     controller = Controller.new(action_name: "index", controller_path: "tests")
 
-    assert controller.authorize
+    assert_nothing_raised { controller.authorize }
   end
 
   test "#authorize when controller is namespaced" do
@@ -15,7 +15,7 @@ class Guarda::AuthorizationTest < ActiveSupport::TestCase
       controller_path: "admin/tests"
     )
 
-    assert controller.authorize
+    assert_nothing_raised { controller.authorize }
   end
 
   test "#authorize with optional attributes" do
@@ -28,6 +28,13 @@ class Guarda::AuthorizationTest < ActiveSupport::TestCase
     controller = Controller.new(action_name: "x", controller_path: "x")
 
     assert controller.authorize(Record.new, controller: :tests, query: :edit?)
+  end
+
+  test "#authorize returns the record" do
+    controller = Controller.new(action_name: "index", controller_path: "tests")
+    record = Record.new
+
+    assert_equal record, controller.authorize(record)
   end
 
   test "#authorize when policy is found but query is false" do

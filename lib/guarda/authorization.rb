@@ -17,6 +17,8 @@ module Guarda
 
       policy(controller, record).public_send(query) ||
         raise(NotAuthorizedError, self.class)
+
+      record
     end
 
     def policy(controller, record = nil)
