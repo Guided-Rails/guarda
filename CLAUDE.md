@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What is Guarda
 
-Guarda is a lightweight Ruby authorization gem inspired by Pundit. It uses Rails' `CurrentAttributes` (`Current.person`) for the authenticated user and convention-based policy class discovery.
+Guarda is a lightweight Ruby authorization gem. It uses Rails' `CurrentAttributes` (`Current.person`) for the authenticated user and convention-based policy class discovery.
 
 ## Commands
 
